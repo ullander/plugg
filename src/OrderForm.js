@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
-import { AsyncParallelBailHook } from 'tapable';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const Index = () => <h2>Home</h2>;
-const Guestbooks = () => <h2>Guestbook</h2>
+// 1. Render a form
 
-const Startpage = () => (
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/startpage/">Home</Link>
-          </li>
-          <li> 
-            <Link to="/guestbook/">Guestbook</Link>
-          </li>
-        </ul>
-      </nav>
+// 2. Render a <button> to add an item (this.state.items) to the order form
 
-      <Route path="/" exact component={Index} />
-      <Route path="/guestbook/" component={Guestbooks} />
-    </div>
-  </Router>
-);
-// const availableItems = [
-//  { name: 'Banana', price: 5 },
-//  { name: 'Liqorice', price: 10 },
-//  { name: 'Deck of Cards', price: 25 },
-//  { name: 'Lighter', price: 50 },
-//];
+// 3. Loop through this.state.items, for each item,
+//  3.1. render a <select> dropdown that contains availableItems 
+//  3.2. and a quantity <input type="number"> field
+//  3.3. and a <button> to remove the item the <button> belongs to.
+
+// 4. Display the total price for all items and the quantity of items somewhere on the page
+
+// 5. Add a "Submit Order" <button>
 
 class OrderForm extends Component {
   constructor(props) {
@@ -76,7 +59,6 @@ class OrderForm extends Component {
     return (
       <div>
         <h1>Order Form</h1>
-        <r></r>
         <form
         onSubmit={this.handleSubmit}
         >
@@ -111,22 +93,9 @@ class OrderForm extends Component {
         }
         </il>
         <strong>Total price: </strong>
-      </div>);
+      </div>
+    );
   }
-  }
-    // 1. Render a form
-
-    // 2. Render a <button> to add an item (this.state.items) to the order form
-
-    // 3. Loop through this.state.items, for each item,
-    //  3.1. render a <select> dropdown that contains availableItems 
-    //  3.2. and a quantity <input type="number"> field
-    //  3.3. and a <button> to remove the item the <button> belongs to.
-
-    // 4. Display the total price for all items and the quantity of items somewhere on the page
-
-    // 5. Add a "Submit Order" <button>
-
-
+}
 
 export default OrderForm;

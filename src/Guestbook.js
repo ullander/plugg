@@ -43,8 +43,7 @@ class Guestbook extends Component {
   render() {
     return (
       <div>
-        <h1>Order Form</h1>
-        <p></p>
+        <h1>Guestbook</h1>
         <form
           onSubmit={this.handleSubmit}
         >
